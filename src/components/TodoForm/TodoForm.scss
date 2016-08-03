@@ -1,0 +1,15 @@
+.todo-form {
+  display: flex;
+  height: 60px;
+  margin-bottom: 30px;
+  width: 600px;
+  max-width: 100%;
+
+  input {
+    flex-grow: 1;
+    margin-right: 15px;
+  }
+  button {
+    flex-grow: 0;
+  }
+}

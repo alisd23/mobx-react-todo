@@ -1,0 +1,37 @@
+@import 'node_modules/bootstrap/scss/variables';
+
+.todo-item {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  padding: 20px 15px;
+
+  &:not(:last-child) {
+    border-bottom: 2px solid #eee;
+  }
+
+  &.completed {
+    text-decoration: line-through;
+    background-color: #f4f4f4;
+    color: #777;
+  }
+
+  span {
+    flex-grow: 1;
+  }
+
+  .highlight {
+    position: absolute;
+    top:    0; right: 0;
+    bottom: 0;
+    width: 0;
+    background-color: $brand-primary;
+    transition: width 0.2s ease-out;
+  }
+
+  &:not(.completed):hover {
+    .highlight {
+      width: 4px;
+    }
+  }
+}

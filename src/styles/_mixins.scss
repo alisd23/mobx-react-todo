@@ -1,0 +1,20 @@
+@mixin center-x($direction: row) {
+  @if ($direction == row) {
+    justify-content: center;
+  } @else {
+    align-items: center;
+  }
+}
+
+@mixin center-y($direction: row) {
+  @if ($direction == row) {
+    align-items: center;
+  } @else {
+    justify-content: center;
+  }
+}
+
+@mixin center-all($direction) {
+  @include center-x($direction);
+  @include center-y($direction);
+}

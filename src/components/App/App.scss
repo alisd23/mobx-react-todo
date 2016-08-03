@@ -1,0 +1,28 @@
+@import '~styles/mixins';
+
+.app {}
+
+.app-body {
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-header {
+  display: flex;
+  background-color: white;
+  height: 140px;
+  padding: 20px;
+  color: #333333;
+  @include center-all(row);
+
+  .app-title {
+    font-weight: light;
+    margin: 0;
+  }
+}
+
+.app-intro {
+  font-size: large;
+}
