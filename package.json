@@ -48,6 +48,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "mobx": "^2.4.1",
     "mobx-react": "^3.5.3",
     "react": "^15.3.0",

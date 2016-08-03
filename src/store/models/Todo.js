@@ -1,11 +1,16 @@
+import { observable } from 'mobx';
+
 export default class Todo {
+  @observable id;
+  @observable title = '';
+  @observable isCompleted = false;;
+
   constructor({ title, id }) {
     this.title = title;
     this.id = id;
-    this.isCompleted = false;
   }
 
-  toggleCompleted(completed = !this._isCompleted) {
-    this._isCompleted = Boolean(completed);
+  toggleCompleted(completed = !this.isCompleted) {
+    this.isCompleted = Boolean(completed);
   }
 }

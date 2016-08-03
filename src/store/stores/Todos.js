@@ -15,11 +15,11 @@ class Todos {
   addTodo(title) {
     const id = uuid.v4();
     this.todosMap = {
-      [id]: new Todo({title, id}),
-      ...this.todosMap
+      ...this.todosMap,
+      [id]: new Todo({title, id})
     };
   }
-  
+
   @action
   deleteTodo(id) {
     const newTodos = { ...this.todosMap };
