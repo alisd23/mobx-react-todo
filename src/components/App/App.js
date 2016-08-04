@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DevTools from 'mobx-react-devtools';
 import TodoList from 'components/TodoList';
 import TodoForm from 'components/TodoForm';
 import TodoFilter from 'components/TodoFilter';
@@ -16,6 +17,7 @@ class App extends Component {
           <TodoFilter />
           <TodoList />
         </div>
+        <DevTools />
       </div>
     );
   }

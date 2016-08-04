@@ -22,7 +22,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.json'],
-    root: [paths.appSrc, paths.root],
+    modules: [paths.appSrc, paths.root, paths.appNodeModules],
     alias: {
       // This `alias` section can be safely removed after ejection.
       // We do this because `babel-runtime` may be inside `react-scripts`,
@@ -51,8 +51,13 @@ module.exports = {
       {
         test: /\.js$/,
         include: paths.appSrc,
-        loader: 'babel',
-        query: require('./babel.dev')
+        loaders: [
+          { loader: 'react-hot' },
+          {
+            loader: 'babel',
+            query: require('./babel.dev')
+          }
+        ]
       },
       {
         test: /\.scss$/,
