@@ -31,6 +31,11 @@ class Todos {
   toggleCompleted(id) {
     this.todosMap[id].toggleCompleted();
   }
+
+  @action
+  editTodoTitle(id, title) {
+    this.todosMap[id].setTitle(title);
+  }
 }
 
 export default Todos;

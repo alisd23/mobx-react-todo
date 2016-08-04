@@ -10,12 +10,11 @@
 }
 
 .app-header {
-  display: flex;
+  @include center-all(row);
   background-color: white;
   height: 140px;
   padding: 20px;
   color: #333333;
-  @include center-all(row);
 
   .app-title {
     font-weight: light;

@@ -3,7 +3,7 @@ import { observable } from 'mobx';
 export default class Todo {
   @observable id;
   @observable title = '';
-  @observable isCompleted = false;;
+  @observable isCompleted = false;
 
   constructor({ title, id }) {
     this.title = title;
@@ -12,5 +12,9 @@ export default class Todo {
 
   toggleCompleted(completed = !this.isCompleted) {
     this.isCompleted = Boolean(completed);
+  }
+
+  setTitle(title) {
+    this.title = title || '';
   }
 }
