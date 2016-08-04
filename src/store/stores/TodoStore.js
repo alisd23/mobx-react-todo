@@ -46,16 +46,6 @@ class Todos {
   }
 
   @action
-  toggleCompleted(id) {
-    this.todosMap[id].toggleCompleted();
-  }
-
-  @action
-  editTodoTitle(id, title) {
-    this.todosMap[id].setTitle(title);
-  }
-
-  @action
   changeFilter(filter) {
     if (FilterTypes[filter]) {
       this.filter = filter;

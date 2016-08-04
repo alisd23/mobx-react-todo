@@ -1,4 +1,4 @@
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 
 export default class Todo {
   @observable id;
@@ -10,10 +10,12 @@ export default class Todo {
     this.id = id;
   }
 
+  @action
   toggleCompleted(completed = !this.isCompleted) {
     this.isCompleted = Boolean(completed);
   }
 
+  @action
   setTitle(title) {
     this.title = title || '';
   }

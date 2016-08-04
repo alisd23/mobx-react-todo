@@ -20,13 +20,13 @@ class TodoItem extends Component {
           <input
             className='form-control'
             value={todo.title}
-            onChange={(e) => todoStore.editTodoTitle(todo.id, e.target.value)}
+            onChange={(e) => todo.setTitle(e.target.value)}
           />
           <div className='input-highlight'></div>
-      </div>
+        </div>
         <div className='options'>
           <TodoCompletedButton
-            onToggle={() => todoStore.toggleCompleted(todo.id)}
+            onToggle={() => todo.toggleCompleted()}
             isCompleted={todo.isCompleted}
           />
           <TodoDeleteButton onDelete={() => todoStore.deleteTodo(todo.id)} />
