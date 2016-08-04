@@ -6,20 +6,24 @@ import FilterTypes from 'constants/FilterTypes';
 class Todos {
   @observable todosMap = {};
   @observable filter = FilterTypes.ALL;
+  @observable search = '';
 
   @computed get todos() {
     return Object.keys(this.todosMap).map(id => this.todosMap[id]);
   }
+  @computed get searchedTodos() {
+    return this.todos.filter(todo => todo.title.includes(this.search))
+  }
   @computed get filteredTodos() {
     switch (this.filter) {
       case FilterTypes.ALL:
-        return this.todos;
+        return this.searchedTodos;
       case FilterTypes.ACTIVE:
-        return this.todos.filter(todo => !todo.isCompleted);
+        return this.searchedTodos.filter(todo => !todo.isCompleted);
       case FilterTypes.COMPLETED:
-        return this.todos.filter(todo => todo.isCompleted);
+        return this.searchedTodos.filter(todo => todo.isCompleted);
       default:
-        return this.todos;
+        return this.searchedTodos;
     }
   }
 
@@ -54,6 +58,11 @@ class Todos {
     if (FilterTypes[filter]) {
       this.filter = filter;
     }
+  }
+
+  @action
+  changeSearch(term) {
+    this.search = term;
   }
 }
 

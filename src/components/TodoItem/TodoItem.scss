@@ -1,11 +1,14 @@
 @import '~styles/mixins';
+@import '~styles/variables';
 @import 'node_modules/bootstrap/scss/variables';
 
 .todo-item {
   display: flex;
   position: relative;
   cursor: pointer;
-  padding: 15px 15px;
+  padding: 0 20px;
+  height: $todo-height;
+  overflow: hidden;
   transition:
     opacity 0.25s ease-out,
     background-color 0.25s ease-out;
@@ -46,6 +49,7 @@
   }
 
   &-title {
+    @include center-x(row);
     flex-grow: 1;
     margin-right: 20px;
 
