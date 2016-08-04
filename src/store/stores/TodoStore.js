@@ -12,7 +12,9 @@ class Todos {
     return Object.keys(this.todosMap).map(id => this.todosMap[id]);
   }
   @computed get searchedTodos() {
-    return this.todos.filter(todo => todo.title.includes(this.search))
+    return this.todos.filter(
+      todo => todo.title.match(new RegExp(this.search, 'i'))
+    );
   }
   @computed get filteredTodos() {
     switch (this.filter) {
