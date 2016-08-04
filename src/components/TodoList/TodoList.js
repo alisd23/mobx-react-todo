@@ -11,7 +11,7 @@ class TodoList extends Component {
     return (
       <div className='todo-list'>
         {
-          todoStore.todos.map(todo => (
+          todoStore.filteredTodos.map(todo => (
             <TodoItem
               key={todo.id}
               todo={todo}

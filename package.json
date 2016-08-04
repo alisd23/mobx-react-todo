@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.3",
+    "change-case": "^3.0.0",
     "classnames": "^2.2.5",
     "mobx": "^2.4.1",
     "mobx-react": "^3.5.3",

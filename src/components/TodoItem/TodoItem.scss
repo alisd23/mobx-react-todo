@@ -6,14 +6,17 @@
   position: relative;
   cursor: pointer;
   padding: 15px 15px;
-  transition: opacity 0.3s ease-out;
+  transition:
+    opacity 0.25s ease-out,
+    background-color 0.25s ease-out;
 
   &:not(:last-child) {
     border-bottom: 2px solid #eee;
   }
 
   &.completed {
-    opacity: 0.5;
+    opacity: 0.7;
+    background-color: #f6f6f6;
 
     input {
       text-decoration: line-through;
@@ -49,6 +52,7 @@
     input {
       border-radius: 0;
       border: none;
+      background-color: transparent;
 
       + .input-highlight {
         height: 0;

@@ -1,0 +1,33 @@
+@import 'node_modules/bootstrap/scss/variables';
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: 20px;
+  width: 600px;
+  max-width: 100%;
+
+  .filter-item {
+    position: relative;
+    padding: 8px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+
+    &:after {
+      position: absolute;
+      content: '';
+      height: 3px;
+      opacity: 0;
+      bottom: 0;
+      left:   0; right: 0;
+      transition: opacity 0.15s ease-out;
+      background-color: $brand-primary;
+    }
+
+    &.is-active:after {
+      opacity: 1;
+    }
+  }
+}
