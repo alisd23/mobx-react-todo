@@ -1,0 +1,37 @@
+@import '~styles/variables';
+
+.fade-enter,
+.fade-leave.fade-leave-active {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active,
+.fade-leave.fade-leave-active {
+  transition: opacity 0.2s ease-out;
+}
+
+.fade-leave,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+}
+
+.todo-enter,
+.todo-leave.todo-leave-active {
+  height: 0;
+  opacity: 0;
+  border-width: 0;
+}
+
+.todo-enter.todo-enter-active,
+.todo-leave.todo-leave-active {
+  transition:
+    opacity 0.4s ease,
+    height 0.3s ease-out,
+    border-width 0.3s ease-out;
+}
+
+.todo-leave,
+.todo-enter.todo-enter-active {
+  opacity: 1;
+  height: $todo-height;
+}

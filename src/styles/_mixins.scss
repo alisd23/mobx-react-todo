@@ -1,4 +1,12 @@
-@mixin center-x($direction: row) {
+@mixin _flex-it($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin center-x($direction: row, $include-flex: true) {
+  @if ($include-flex) {
+    @include _flex-it($direction);
+  }
   @if ($direction == row) {
     justify-content: center;
   } @else {
@@ -6,7 +14,10 @@
   }
 }
 
-@mixin center-y($direction: row) {
+@mixin center-y($direction: row, $include-flex: true) {
+  @if ($include-flex) {
+    @include _flex-it($direction);
+  }
   @if ($direction == row) {
     align-items: center;
   } @else {
@@ -15,6 +26,7 @@
 }
 
 @mixin center-all($direction) {
-  @include center-x($direction);
-  @include center-y($direction);
+  @include _flex-it($direction);
+  @include center-x($direction, false);
+  @include center-y($direction, false);
 }

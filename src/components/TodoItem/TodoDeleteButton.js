@@ -2,8 +2,7 @@ import React from 'react';
 
 export default ({ onDelete }) => (
   <i
-    className="fa fa-lg fa-times delete"
-    aria-hidden="true"
+    className="delete material-icons md-36"
     onClick={onDelete}
-  ></i>
+  >clear</i>
 );
