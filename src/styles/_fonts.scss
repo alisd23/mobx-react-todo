@@ -1,18 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
 @font-face {
   font-family: 'San Francisco';
-  src: url('/assets/fonts/SF-UI-Text-Regular.otf') format('openType');
+  src: url('assets/fonts/SF-UI-Text-Regular.otf') format('openType');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'San Francisco';
-  src: url('/assets/fonts/SF-UI-Text-Bold.otf') format('openType');
+  src: url('assets/fonts/SF-UI-Text-Bold.otf') format('openType');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'San Francisco';
-  src: url('/assets/fonts/SF-UI-Text-Light.otf') format('openType');
+  src: url('assets/fonts/SF-UI-Text-Light.otf') format('openType');
   font-weight: 300;
   font-style: normal;
 }
