@@ -12,4 +12,4 @@ RUN npm run build
 
 EXPOSE 9999
 
-ENTRYPOINT npm run server
+ENTRYPOINT npm run server 9999
