@@ -11,23 +11,27 @@ class TodoForm extends Component {
 
   render() {
     return (
-      <div className='todo-form'>
+      <form
+        className='todo-form'
+        onSubmit={(e) => this.onFormSubmit(e)}
+      >
         <input
           className='form-control'
           value={this.state.newTitle}
           onChange={(e) => this.changeTitle(e)}
         />
         <button
+          type="submit"
           className='btn btn-primary'
-          onClick={() => this.onAddClick()}
         >
           Add todo
         </button>
-      </div>
+      </form>
     );
   }
 
-  onAddClick() {
+  onFormSubmit(e) {
+    e.preventDefault();
     this.props.todoStore.addTodo(this.state.newTitle);
     this.setState({
       newTitle: ''
